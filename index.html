@@ -1,34 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Shapeshifters Lab</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shapeshifters Lab™</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #0d0d0d;
+      font-family: 'Orbitron', sans-serif;
+      color: #f5f5f5;
+    }
+    .leo-bg {
+      background: url('https://i.imgur.com/ZbptQgt.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: -1;
+      opacity: 0.15;
+      filter: brightness(1.1) contrast(1.2);
+
+      <!-- WELCOME SCREEN -->
+<div id="welcomeScreen" style="position:fixed;top:0;left:0;width:100vw;height:100vh;background:#0d0d0d;z-index:9999;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:2rem;text-align:center;">
+  <h1 style="font-family:'Orbitron',sans-serif;color:#00f6ff;font-size:2rem;margin-bottom:1rem;">🧬 Welcome to Shapeshifters Lab</h1>
+  <p style="color:#FFD700;font-style:italic;margin-bottom:2rem;">The AI Arsenal Drop 001 is forming. Join the Vault. Evolve.</p>
+
+  <form id="entryForm" style="display:flex;flex-direction:column;gap:1rem;max-width:400px;width:100%;">
+    <input type="text" id="userName" placeholder="What’s your name, shapeshifter?" required style="padding:0.75rem;font-size:1rem;border:none;border-radius:5px;" />
+    <input type="email" id="userEmail" placeholder="Where should we send your Vault key?" required style="padding:0.75rem;font-size:1rem;border:none;border-radius:5px;" />
+
+    <select id="userChoice" required style="padding:0.75rem;font-size:1rem;border:none;border-radius:5px;">
+      <option value="">What are you here to train on?</option>
+      <option value="Napkin">Napkin AI (Infographic Slayer)</option>
+      <option value="Clay">Clay AI (Lead Sniping Ops)</option>
+      <option value="Notebook">Notebook LM (Study Upgrade)</option>
+      <option value="Omi">Omi (No Hands Workflow)</option>
+      <option value="All">All of them. Fully Evolving.</option>
+    </select>
+
+    <button type="submit" style="padding:0.75rem 1.5rem;font-size:1rem;background:#8b5cf6;color:#fff;border:none;border-radius:50px;cursor:pointer;">Enter the Lab</button>
+  </form>
+</div>
+
+    }
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #00f6ff;
+      text-shadow: 0 0 10px #00f6ff;
+    }
+    p.subtitle {
+      color: #FFD700;
+      font-style: italic;
+    }
+    .trial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .trial-card {
+      background: #1a001f;
+      padding: 1.5rem;
+      border-left: 5px solid #00f6ff;
+      box-shadow: 0 0 10px #00f6ff40;
+      transition: 0.3s;
+    }
+    .trial-card:hover {
+      border-color: #FFD700;
+      box-shadow: 0 0 15px #FFD70080;
+    }
+    .trial-card h3 {
+      color: #00f6ff;
+    }
+    .btn {
+      display: inline-block;
+      background: #8b5cf6;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      margin-top: 1rem;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #00f6ff;
+      color: #000;
+    }
+    #countdown {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      color: #FFD700;
+    }
+  </style>
 </head>
 <body>
+  <div class="leo-bg"></div>
 
-  <section class="hero">
-    <h1>SHAPESHIFTERS LAB</h1>
-    <p>7 Trials. 1 Vault. No hand-holding.</p>
-    <button id="beginDescentBtn">BEGIN DESCENT</button>
-    <div id="tooltipBox" class="tooltip">Leo is watching…</div>
+  <header>
+    <h1>SHAPESHIFTERS LAB™ VAULT</h1>
+    <p class="subtitle">"Click. Mutate. Repeat."</p>
+  </header>
+
+  <div id="countdown">Next drop in: <span id="timer">--:--:--</span></div>
+
+  <section class="trial-grid">
+    <div class="trial-card">
+      <h3>Napkin AI</h3>
+      <p>Sketch thoughts into AI-powered visuals. Instant diagrams for chaos brains.</p>
+      <a class="btn" href="#">Unlock Trial</a>
+    </div>
+    <div class="trial-card">
+      <h3>Clay</h3>
+      <p>Find leads. Build lists. Automate hyper-personalized outreach with style.</p>
+      <a class="btn" href="#">Unlock Trial</a>
+    </div>
+    <div class="trial-card">
+      <h3>Notebook LM</h3>
+      <p>Turn docs into an AI companion that actually remembers things you don’t.</p>
+      <a class="btn" href="#">Unlock Trial</a>
+    </div>
+    <div class="trial-card">
+      <h3>Crew AI</h3>
+      <p>Build your own digital team of agents that run missions for you.</p>
+      <a class="btn" href="#">Unlock Trial</a>
+    </div>
+    <div class="trial-card">
+      <h3>Replicate</h3>
+      <p>Run cutting-edge models with no code. Build your own magic spells.</p>
+      <a class="btn" href="#">Unlock Trial</a>
+    </div>
+    <div class="trial-card">
+      <h3>Autopod</h3>
+      <p>Automated podcast editing like you hired a $2K/month editor—but it’s AI.</p>
+      <a class="btn" href="#">Unlock Trial</a>
+    </div>
+    <div class="trial-card">
+      <h3>Omi</h3>
+      <p>Wearable AI that listens to your thoughts and executes. No. Really.</p>
+      <a class="btn" href="#">Unlock Trial</a>
+    </div>
   </section>
 
-  <section class="trials-grid">
-    <div class="trial" id="trial1">Napkin</div>
-    <div class="trial" id="trial2">Clay</div>
-    <div class="trial" id="trial3">Notebook LM</div>
-    <div class="trial" id="trial4">Crew AI</div>
-    <div class="trial" id="trial5">Replicate</div>
-    <div class="trial" id="trial6">AutoPod</div>
-    <div class="trial" id="trial7">Omi</div>
-    <div id="trialTooltip" class="tooltip"></div>
-  </section>
+  <script>
+    // Countdown Timer (48 hours from now)
+    const target = new Date();
+    target.setHours(target.getHours() + 48);
+    const timerEl = document.getElementById('timer');
+    function updateCountdown() {
+      const now = new Date();
+      const diff = target - now;
+      const h = String(Math.floor(diff / (1000 * 60 * 60))).padStart(2, '0');
+      const m = String(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+      const s = String(Math.floor((diff % (1000 * 60)) / 1000)).padStart(2, '0');
+      timerEl.textContent = `${h}:${m}:${s}`;
+    }
+    setInterval(updateCountdown, 1000);
+  </script// Welcome Screen Handler
+const form = document.getElementById("entryForm");
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
 
-  <section class="coffee-feed">
-    <p id="coffeeFeedBox">☕ Loading FOMO feed…</p>
-  </section>
+  const name = document.getElementById("userName").value.trim();
+  const email = document.getElementById("userEmail").value.trim();
+  const choice = document.getElementById("userChoice").value;
 
-  <script src="script.js"></script>
+  if (!name || !email || !choice) return alert("Complete all fields, shapeshifter!");
+
+  // Optionally: store to localStorage, send to server, or log it
+  console.log({ name, email, choice });
+
+  // Hide welcome screen, reveal Vault
+  document.getElementById("welcomeScreen").style.display = "none";
+});
+>
 </body>
 </html>
+
